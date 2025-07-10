@@ -1,0 +1,87 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Background for all pages */
+body, html {
+  height: 100%;
+  background: url('../assets/bg.jpg') no-repeat center center/cover;
+  color: white;
+}
+
+/* Navbar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.logo {
+  font-size: 32px;
+  font-weight: 700;
+  color: #00ffd5;
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+/* Navigation links */
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav ul li a:hover {
+  color: #00ffd5;
+}
+
+/* Page content styling */
+.page-content {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.page-content h2 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.page-content p {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.btn {
+  text-decoration: none;
+  background: #00ffd5;
+  color: #000;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: 0.3s ease;
+  margin-top: 20px;
+}
+
+.btn:hover {
+  background: #00c0a2;
+  color: white;
+  justify-content: center;
+}
+

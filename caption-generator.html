@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>📝 Caption Generator - StatusVerse</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: url('assets/bg.jpg') no-repeat center center/cover;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      color: white;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      text-shadow: 1px 1px 4px black;
+    }
+
+    .generator-box {
+      background: rgba(0, 0, 0, 0.4);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+      max-width: 600px;
+      width: 100%;
+      animation: fadeIn 0.8s ease;
+    }
+
+    #caption {
+      font-size: 20px;
+      margin: 20px 0;
+      padding: 20px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 10px;
+      min-height: 100px;
+    }
+
+    button {
+      background-color: #00ffd5;
+      color: #000;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #00c0a2;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <h1>📝 Caption Generator</h1>
+  <div class="generator-box">
+    <p id="caption">Click below to generate a random caption!</p>
+    <button onclick="generateCaption()">🎲 Generate Caption</button>
+  </div>
+
+  <script>
+    const captions = [
+      "✨ Be yourself; everyone else is already taken.",
+      "😎 Living my best life, one moment at a time.",
+      "🌈 Dreams don’t work unless you do.",
+      "🔥 Born to express, not to impress.",
+      "📸 Smile big, laugh often.",
+      "❤️ Love the life you live.",
+      "🌟 Stars can't shine without darkness.",
+      "🚀 Keep going, keep growing.",
+      "😂 Messy bun and having fun.",
+      "🎯 Focused. Determined. Unstoppable."
+    ];
+
+    function generateCaption() {
+      const random = Math.floor(Math.random() * captions.length);
+      document.getElementById('caption').innerText = captions[random];
+    }
+  </script>
+
+  <script src="js/main.js"></script>
+  
+</body>
+</html>

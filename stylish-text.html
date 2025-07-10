@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>✨ Stylish Text Generator - StatusVerse</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #0f0f0f;
+      color: #fff;
+      min-height: 100vh;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 30px;
+      color: #00ffd5;
+    }
+
+    input {
+      padding: 14px;
+      width: 90%;
+      max-width: 500px;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .style-box {
+      background: #1a1a1a;
+      margin: 15px auto;
+      max-width: 700px;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 255, 213, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .styled-text {
+      font-size: 18px;
+      word-break: break-word;
+      text-align: left;
+    }
+
+    button.copy-btn {
+      background: #00ffd5;
+      color: #000;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    button.copy-btn:hover {
+      background: #00c0a2;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>✨ Stylish Text Generator</h1>
+  <input type="text" id="userInput" placeholder="Type your text here..." oninput="generateStyles()" />
+
+  <div id="outputStyles"></div>
+
+  <script>
+    const fonts = [
+      str => str.split('').map(c => String.fromCharCode(0x1D5A0 + (c.charCodeAt(0) - 97))).join(''), // Sans serif
+      str => str.split('').map(c => 'ⓐⓑⓒⓓⓔⓕⓖⓗⓘⓙⓚⓛⓜⓝⓞⓟⓠⓡⓢⓣⓤⓥⓦⓧⓨⓩ'.charAt(c.toLowerCase().charCodeAt(0) - 97)).join(''), // Bubbles
+      str => str.toUpperCase().split('').map(c => '🅐🅑🅒🅓🅔🅕🅖🅗🅘🅙🅚🅛🅜🅝🅞🅟🅠🅡🅢🅣🅤🅥🅦🅧🅨🅩'.charAt(c.charCodeAt(0) - 65)).join(''), // Boxed
+      str => `𝓢𝓽𝔂𝓵𝓲𝓼𝓱 ${str} ✨`,
+      str => `•☆• ${str.toUpperCase()} •☆•`,
+      str => `『 ${str} 』`,
+      str => `°°${str}°°`,
+      str => `★彡 ${str} 彡★`,
+      str => `𓆩 ${str} 𓆪`,
+      str => `✧･ﾟ: *✧･ﾟ:* ${str} *:･ﾟ✧*:･ﾟ✧`
+    ];
+
+    function generateStyles() {
+      const input = document.getElementById("userInput").value;
+      const output = document.getElementById("outputStyles");
+      output.innerHTML = "";
+
+      if (!input.trim()) return;
+
+      fonts.forEach(fn => {
+        const styled = fn(input);
+        const box = document.createElement('div');
+        box.className = 'style-box';
+
+        const text = document.createElement('div');
+        text.className = 'styled-text';
+        text.innerText = styled;
+
+        const button = document.createElement('button');
+        button.className = 'copy-btn';
+        button.innerText = "Copy";
+        button.onclick = () => {
+          navigator.clipboard.writeText(styled);
+          button.innerText = "Copied!";
+          setTimeout(() => button.innerText = "Copy", 1500);
+        };
+
+        box.appendChild(text);
+        box.appendChild(button);
+        output.appendChild(box);
+      });
+    }
+  </script>
+
+  <script src="js/main.js"></script>
+  
+</body>
+</html>

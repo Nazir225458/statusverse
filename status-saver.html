@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>📥 Status Saver – Coming Soon</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body, html {
+      height: 100%;
+      width: 100%;
+      background: url('assets/bg.jpg') no-repeat center center/cover;
+      overflow: hidden;
+    }
+
+    .container {
+      height: 100vh;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(8px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 40px;
+      font-weight: 600;
+      color: #00ffd5;
+      margin-bottom: 20px;
+      animation: glow 1.5s infinite alternate;
+    }
+
+    p {
+      font-size: 18px;
+      color: #ddd;
+      margin-bottom: 30px;
+    }
+
+    .coming-img {
+      width: 100%;
+      max-width: 700px;
+      border-radius: 16px;
+      box-shadow: 0 10px 40px rgba(0, 255, 213, 0.3);
+      transition: transform 0.5s ease;
+    }
+
+    .coming-img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 12px 60px rgba(0, 255, 213, 0.5);
+    }
+
+    @keyframes glow {
+      0% { text-shadow: 0 0 10px #00ffd5, 0 0 20px #00ffd5; }
+      100% { text-shadow: 0 0 20px #00ffd5, 0 0 40px #00ffd5; }
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 30px; }
+      p { font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📥 Status Saver – Coming Soon!</h1>
+    <p>Our Android app is launching soon. Download all your favorite statuses in just one click!</p>
+    <img class="coming-img" src="assets/status-saver-coming-soon.jpg" alt="Coming Soon in Android" />
+  </div>
+
+  <script src="js/main.js"></script>
+  
+</body>
+</html>
